@@ -5,29 +5,15 @@ const SECURITY_CODE = 'paradigma'
 export const UseReducer = ({ name }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  const onConfirm = () => {
-    dispatch({ type: actionTypes.CONFIRM })
-  }
-
-  const onError = () => {
-    dispatch({ type: actionTypes.ERROR })
-  }
-
+  const onConfirm = () => dispatch({ type: actionTypes.CONFIRM })
+  const onError = () => dispatch({ type: actionTypes.ERROR })
+  const onCheck = () => dispatch({ type: actionTypes.CHECK })
+  const onReset = () => dispatch({ type: actionTypes.RESET })
+  const onDelete = () => dispatch({ type: actionTypes.DELETE })
   const onWrite = (event) => {
     dispatch({ type: actionTypes.WRITE, payload: event.target.value })
   }
-
-  const onCheck = () => {
-    dispatch({ type: actionTypes.CHECK })
-  }
-
-  const onReset = () => {
-    dispatch({ type: actionTypes.RESET })
-  }
-
-  const onDelete = () => {
-    dispatch({ type: actionTypes.DELETE })
-  }
+  
 
   useEffect(() => {
     console.log('Empezando Effect...')
